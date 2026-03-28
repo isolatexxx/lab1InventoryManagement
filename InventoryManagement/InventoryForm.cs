@@ -36,12 +36,18 @@ namespace InventoryManagement
                 Text = "Название"
             };
 
+            nameTextBox.Click += nameTextBox_Click;
+            nameTextBox.Leave += nameTextBox_Leave;
+
             quantityTextBox = new TextBox
             {
                 Location = new Point(170, 10),
                 Width = 80,
                 Text = "Количество"
             };
+
+            quantityTextBox.Click += quantityTextBox_Click;
+            quantityTextBox.Leave += quantityTextBox_Leave;
 
             priceTextBox = new TextBox
             {
@@ -50,12 +56,18 @@ namespace InventoryManagement
                 Text = "Цена"
             };
 
+            priceTextBox.Click += priceTextBox_Click;
+            priceTextBox.Leave += priceTextBox_Leave;
+
             categoryTextBox = new TextBox
             {
                 Location = new Point(370, 10),
                 Width = 100,
                 Text = "Категория"
             };
+
+            categoryTextBox.Click += categoryTextBox_Click;
+            categoryTextBox.Leave += categoryTextBox_Leave;
 
             addItemButton = new Button
             {
@@ -100,6 +112,71 @@ namespace InventoryManagement
             inventoryManager = new InventoryManager();
             UpdateItemsList();
         }
+
+        private void nameTextBox_Click(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text == "Название")
+            {
+                nameTextBox.Text = string.Empty;
+            }
+        }
+        private void nameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                nameTextBox.Text = "Название";
+            }
+        }
+
+
+        private void quantityTextBox_Click(object sender, EventArgs e)
+        {
+            if (quantityTextBox.Text == "Количество")
+            {
+                quantityTextBox.Text = string.Empty;
+            }
+        }
+        private void quantityTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(quantityTextBox.Text))
+            {
+                quantityTextBox.Text = "Количество";
+            }
+        }
+
+        private void priceTextBox_Click(object sender, EventArgs e)
+        {
+            if (priceTextBox.Text == "Цена")
+            {
+                priceTextBox.Text = string.Empty;
+            }
+        }
+        private void priceTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(priceTextBox.Text))
+            {
+                priceTextBox.Text = "Цена";
+            }
+        }
+
+        private void categoryTextBox_Click(object sender, EventArgs e)
+        {
+            if (categoryTextBox.Text == "Категория")
+            {
+                categoryTextBox.Text = string.Empty;
+            }
+        }
+        private void categoryTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(categoryTextBox.Text))
+            {
+                categoryTextBox.Text = "Категория";
+            }
+        }
+
+
+
+
 
         private void UpdateItemsList()
         {
